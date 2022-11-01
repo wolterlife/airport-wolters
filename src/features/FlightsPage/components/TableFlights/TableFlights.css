@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiko&display=swap');
+
+.table__container {
+    padding: 0 200px
+}
+
+.col, .col-2 {
+    background-color: #ACE7DE;
+    border: 1px solid #01A08A;
+    font-family: 'Amiko', sans-serif;
+    font-size: 20px;
+}
+
+.align-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container__text {
+    margin: 0;
+    opacity: 1;
+}
+
+.rowResult {
+    border: 1px solid #D9D9D9;
+    background-color: rgba(172, 102, 214, 0.12);
+}
+
+.rowResult:nth-child(even) {
+    background-color: rgba(255, 248, 115, 0.23);
+}
+
+.rowResult .col,
+.rowResult .col-2:not(:first-child) {
+    /*padding can be changed*/
+    padding: 18px 0;
+    border-left: 1px solid #D9D9D9;
+}
+
+
+.rowResult:last-child {
+    text-align: center;
+    border-bottom-left-radius: 34px;
+    border-bottom-right-radius: 34px;
+}
+
+
+
+.colRes:nth-child(1) {
+    font-weight: bold;
+}
+
+/*Модификаторы*/
+.circleBorderTop {
+    text-align: center;
+    border-top-left-radius: 34px;
+    border-top-right-radius: 34px;
+}
+
+.clrStyl {
+    border: 0;
+    background-color: transparent;
+}
+
