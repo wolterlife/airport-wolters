@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Amiko&display=swap');
 
 .table__container {
+    margin-top: 48px;
     padding: 0 200px
 }
 
@@ -50,6 +51,12 @@
 
 .colRes:nth-child(1) {
     font-weight: bold;
+}
+
+.textLoading {
+    margin-top: 24px;
+    text-align: center;
+    font-size: 48px;
 }
 
 /*Модификаторы*/

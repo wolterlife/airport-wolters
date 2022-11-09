@@ -1,5 +1,7 @@
 import "./TableFlights.css"
+import {useEffect, useState} from "react";
 
+/*
 const flights = [
   {
     "id": 1,
@@ -134,9 +136,25 @@ const flights = [
     }
   }
 ]
-
+*/
 const TableFlights = () => {
-  const res = flights.map(item => {
+  const [flights, setFlights] = useState();
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [serverError, setError] = useState("");
+
+  useEffect(() => {
+    fetch("http://localhost:3000/flights")
+      .then(res => res.json())
+      .then((result) => {
+        setIsLoaded(true);
+        setFlights(result);
+      }, (error) => {
+        setIsLoaded(true);
+        setError(error);
+      })
+  },[])
+
+  const res = flights?.map(item => {
     return (
         <div key={item.id} className="row rowResult">
           <div className="col-2 align-text clrStyl colRes">
@@ -185,7 +203,7 @@ const TableFlights = () => {
 
   return (
     <div>
-      <div className="table__container text-center">
+      {isLoaded ? (<div className="table__container text-center">
         <div className="row">
           <div className="col-2 circleBorderTop align-text">
             <p className="container__text">
@@ -247,7 +265,8 @@ const TableFlights = () => {
           </div>
         </div>
         {res}
-      </div>
+      </div>) : (<p className="textLoading">Loading...</p>)}
+      {serverError && <p className="textLoading">Ошибка запроса к базе данных: {serverError.toString()}</p>}
     </div>
   )
 }
