@@ -1,0 +1,94 @@
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+
+//BTSTAP NAV
+$nav-link-padding-y: .3rem;
+$nav-link-padding-x: 1rem;
+$nav-link-color: white;
+$nav-link-hover-color: #c9c8c8;
+$nav-tabs-border-width: 0;
+$nav-tabs-border-radius: 30px;
+
+//BTSTRP BUTTON
+
+$theme-colors: (primary: rgba(255, 255, 255, 0.32));
+$btn-padding-y: 8px;
+$btn-padding-x: 47px;
+$btn-border-width: 0;
+$btn-border-radius: 30px;
+$btn-transition:              color .1s ease-in-out, background-color .1s ease-in-out, border-color .1s ease-in-out, box-shadow .1s ease-in-out;
+
+
+header {
+  background-color: #01A08A;
+
+  img {
+    margin: 19px 0 -22px 19px;
+  }
+
+  .navContainer {
+    display: flex;
+    justify-content: center;
+  }
+
+  .nav-tabs {
+    position: relative;
+
+    .tab1 {
+      background-color: #47046E !important;
+    }
+
+    .tab2 {
+      background-color: #5D1D83 !important;
+    }
+
+    .tab3 {
+      background-color: #6A2B91 !important;
+    }
+
+    .tab4 {
+      background-color: #7B3BA2 !important;
+    }
+
+    .tab5 {
+      background-color: #8C4AB3 !important;
+    }
+
+    .nav-item {
+      background-color: #8C4AB3;
+      border-top-left-radius: 30px;
+      border-top-right-radius: 30px;
+    }
+  }
+
+  .topRightContainer {
+    position: absolute;
+    top: 40px;
+    right: 4px;
+
+    .btn {
+      font-family: 'Inter', sans-serif;
+      margin-right: 16px;
+      margin-bottom: 4px;
+      box-shadow: 3px 4px rgba(46, 107, 98, 1);
+    }
+
+    .btn:active {
+      box-shadow: 0 0 black;
+      transform: translateY(4px);
+    }
+
+    .btnLanguage {
+      border: 0;
+      background-color: transparent;
+    }
+
+    .btnLanguage:last-child {
+      margin-right: 12px;
+    }
+
+  }
+}
+
+
+@import "bootstrap/scss/bootstrap";

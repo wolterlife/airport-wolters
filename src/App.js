@@ -1,11 +1,13 @@
 import FlightsPage from "./features/FlightsPage/FlightsPage";
+import Header from "./components/Header/Header";
 
 function App() {
   return (
     <div className="App">
+      <Header />
       <p>Client</p>
-      <FlightsPage />
-      <button type="button" className={"btn btn-primary"}>Primary</button>
+      {/*<FlightsPage />*/}
+
     </div>
   );
 }
