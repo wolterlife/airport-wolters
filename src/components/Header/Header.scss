@@ -16,48 +16,51 @@ $btn-padding-y: 8px;
 $btn-padding-x: 47px;
 $btn-border-width: 0;
 $btn-border-radius: 30px;
-$btn-transition:              color .1s ease-in-out, background-color .1s ease-in-out, border-color .1s ease-in-out, box-shadow .1s ease-in-out;
+$btn-transition: color .1s ease-in-out, background-color .1s ease-in-out, border-color .1s ease-in-out, box-shadow .1s ease-in-out;
 
 
 header {
   background-color: #01A08A;
 
   img {
+    cursor: pointer;
     margin: 19px 0 -22px 19px;
   }
 
   .navContainer {
     display: flex;
     justify-content: center;
-  }
 
-  .nav-tabs {
-    position: relative;
+    .nav-tabs {
+      position: relative;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
 
-    .tab1 {
-      background-color: #47046E !important;
-    }
+      .tab1 {
+        background-color: #47046E !important;
+      }
 
-    .tab2 {
-      background-color: #5D1D83 !important;
-    }
+      .tab2 {
+        background-color: #5D1D83 !important;
+      }
 
-    .tab3 {
-      background-color: #6A2B91 !important;
-    }
+      .tab3 {
+        background-color: #6A2B91 !important;
+      }
 
-    .tab4 {
-      background-color: #7B3BA2 !important;
-    }
+      .tab4 {
+        background-color: #7B3BA2 !important;
+      }
 
-    .tab5 {
-      background-color: #8C4AB3 !important;
-    }
+      .tab5 {
+        background-color: #8C4AB3 !important;
+      }
 
-    .nav-item {
-      background-color: #8C4AB3;
-      border-top-left-radius: 30px;
-      border-top-right-radius: 30px;
+      .nav-item {
+        background-color: #8C4AB3;
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+      }
     }
   }
 
