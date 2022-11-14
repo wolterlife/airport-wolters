@@ -1,0 +1,57 @@
+table {
+  text-align: center;
+  margin: 48px auto auto;
+  border-collapse: collapse !important; /* Отображать только одинарные линии */
+}
+
+th {
+  color: white;
+  background: #01A08A; /* Цвет фона ячеек */
+  padding: 5px; /* Поля вокруг содержимого ячеек */
+  border: 1px solid black; /* Граница вокруг ячеек */
+}
+
+td {
+  padding: 6px; /* Поля вокруг содержимого ячеек */
+  border: 1px solid black; /* Граница вокруг ячеек */
+}
+
+.nameTable {
+  background-color: #5D1D83;
+}
+
+.btn_edit {
+  color: white;
+  border: 0px;
+  border-radius: 8px;
+  background-color: #f8920e;
+}
+
+.btnRed {
+  background-color: #9f1a1a;
+}
+
+.popUpEditFlight {
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  .content {
+    width: fit-content;
+    height: fit-content;
+    padding: 15px;
+    border-radius: 10px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+
+    form {
+      background-color: white;
+    }
+  }
+}

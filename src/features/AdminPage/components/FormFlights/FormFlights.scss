@@ -1,0 +1,67 @@
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+
+
+
+form {
+  border: 1px solid #01A08A;
+  margin: 48px 400px;
+  padding: 16px;
+  border-radius: 14px;
+}
+
+.topLineForm {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  p {
+    font-size: 24px;
+  }
+}
+
+.closeButton {
+  background-color: #9f1a1a;
+  color: white;
+  border-radius: 6px;
+  border: 0;
+}
+
+.form-group {
+  margin-top: 8px;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.firstErow {
+  padding-right: 24px;
+}
+
+.btn_form {
+  margin-top: 12px;
+  padding: 4px 8px;
+  color: white;
+  background-color: #01A08A;
+  border: 0;
+  border-radius: 8px;
+}
+
+.btn_form:hover {
+  background-color: #00c4aa;
+}
+
+.topContainer {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.btnNameFlight {
+  margin-right: 8px;
+}
+
+
+

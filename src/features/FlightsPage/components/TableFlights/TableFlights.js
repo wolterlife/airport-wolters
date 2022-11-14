@@ -1,144 +1,8 @@
 import "./TableFlights.css"
 import {useEffect, useState} from "react";
 
-/*
-const flights = [
-  {
-    "id": 1,
-    "flightNum": "BM343",
-    "airDepart": "Минск",
-    "airDest": "Москва",
-    "dateDest": "23.03.2002",
-    "timeDest": "16:30",
-    "dateDepart": "21.03.2001",
-    "timeDepart": "15:00",
-    "freePlaces": 0,
-    "airline": {
-      "id": 1,
-      "nameOfAirline": "Belavia",
-      "office": "Minsk"
-    },
-    "plane": {
-      "id": 8,
-      "model": "BOING 737-300R",
-      "year": 2009,
-      "totalPlaces": 280
-    }
-  },
-  {
-    "id": 3,
-    "flightNum": "BM343",
-    "airDepart": "Минск",
-    "airDest": "Москва",
-    "dateDest": "23.03.2002",
-    "timeDest": "16:30",
-    "dateDepart": "21.03.2001",
-    "timeDepart": "15:00",
-    "freePlaces": 0,
-    "airline": {
-      "id": 1,
-      "nameOfAirline": "Belavia",
-      "office": "Minsk"
-    },
-    "plane": {
-      "id": 8,
-      "model": "BOING 737-300R",
-      "year": 2009,
-      "totalPlaces": 280
-    }
-  },
-  {
-    "id": 10,
-    "flightNum": "BM343",
-    "airDepart": "Минск",
-    "airDest": "Москва",
-    "dateDest": "23.03.2002",
-    "timeDest": "16:30",
-    "dateDepart": "21.03.2001",
-    "timeDepart": "15:00",
-    "freePlaces": 3,
-    "airline": {
-      "id": 1,
-      "nameOfAirline": "Belavia",
-      "office": "Minsk"
-    },
-    "plane": {
-      "id": 1,
-      "model": "BOING 737-300R",
-      "year": 2009,
-      "totalPlaces": 280
-    }
-  },
-  {
-    "id": 11,
-    "flightNum": "BM343",
-    "airDepart": "Минск",
-    "airDest": "Москва",
-    "dateDest": "23.03.2002",
-    "timeDest": "16:30",
-    "dateDepart": "21.03.2001",
-    "timeDepart": "15:00",
-    "freePlaces": 3,
-    "airline": {
-      "id": 1,
-      "nameOfAirline": "Belavia",
-      "office": "Minsk"
-    },
-    "plane": {
-      "id": 1,
-      "model": "BOING 737-300R",
-      "year": 2009,
-      "totalPlaces": 280
-    }
-  },
-  {
-    "id": 18,
-    "flightNum": "BM343",
-    "airDepart": "Минск",
-    "airDest": "Москва",
-    "dateDest": "23.03.2002",
-    "timeDest": "16:30",
-    "dateDepart": "21.03.2001",
-    "timeDepart": "15:00",
-    "freePlaces": 279,
-    "airline": {
-      "id": 1,
-      "nameOfAirline": "Belavia",
-      "office": "Minsk"
-    },
-    "plane": {
-      "id": 1,
-      "model": "BOING 737-300R",
-      "year": 2009,
-      "totalPlaces": 280
-    }
-  },
-  {
-    "id": 19,
-    "flightNum": "BM343",
-    "airDepart": "Минск",
-    "airDest": "Москва",
-    "dateDest": "23.03.2002",
-    "timeDest": "16:30",
-    "dateDepart": "21.03.2001",
-    "timeDepart": "15:00",
-    "freePlaces": 0,
-    "airline": {
-      "id": 3,
-      "nameOfAirline": "OneWayAirlines",
-      "office": "Rome"
-    },
-    "plane": {
-      "id": 9,
-      "model": "BOING 737-300R",
-      "year": 2009,
-      "totalPlaces": 50
-    }
-  }
-]
-*/
 const TableFlights = () => {
-  const [flights, setFlights] = useState();
+  const [flights, setFlights] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
   const [serverError, setError] = useState("");
 
@@ -155,6 +19,13 @@ const TableFlights = () => {
   },[])
 
   const res = flights?.map(item => {
+    let formatDateDepart = item.dateDepart.split("-");
+    [formatDateDepart[0], formatDateDepart[2]] = [formatDateDepart[2], formatDateDepart[0]]
+    formatDateDepart = formatDateDepart.join(".");
+
+    let formatDateArrival = item.dateDest.split("-");
+    [formatDateArrival[0], formatDateArrival[2]] = [formatDateArrival[2], formatDateArrival[0]]
+    formatDateArrival = formatDateArrival.join(".");
     return (
         <div key={item.id} className="row rowResult">
           <div className="col-2 align-text clrStyl colRes">
@@ -174,7 +45,7 @@ const TableFlights = () => {
           </div>
           <div className="col align-text clrStyl colRes">
             <p className="container__text">
-              {item.dateDepart}
+              {formatDateDepart}
             </p>
           </div>
           <div className="col align-text clrStyl colRes">
@@ -189,7 +60,7 @@ const TableFlights = () => {
           </div>
           <div className="col align-text clrStyl colRes">
             <p className="container__text">
-              {item.dateDest}
+              {formatDateArrival}
             </p>
           </div>
           <div className="col align-text clrStyl colRes">

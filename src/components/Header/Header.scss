@@ -1,6 +1,7 @@
 @import "bootstrap/scss/functions";
 @import "bootstrap/scss/variables";
 
+// TODO: Вынести бутстрап из файла в общий файл
 //BTSTAP NAV
 $nav-link-padding-y: .3rem;
 $nav-link-padding-x: 1rem;
@@ -9,6 +10,10 @@ $nav-link-hover-color: #c9c8c8;
 $nav-tabs-border-width: 0;
 $nav-tabs-border-radius: 30px;
 
+//BTSTRP FORM INPUT
+$input-focus-border-color:              tint-color(#01A08A, 50%);
+$input-btn-focus-color:         rgba(1,160,138 , .25);
+$input-focus-box-shadow:                0 0 $input-btn-focus-blur $input-btn-focus-width $input-btn-focus-color;
 //BTSTRP BUTTON
 
 $theme-colors: (primary: rgba(255, 255, 255, 0.32));
@@ -93,5 +98,5 @@ header {
   }
 }
 
+@import "bootstrap/scss/bootstrap.scss";
 
-@import "bootstrap/scss/bootstrap";
