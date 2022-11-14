@@ -14,7 +14,7 @@ const AdmTableFlights = ({flights, updateFlights}) => {
   const [formTimeArrival, setTimeArrival] = useState("")
   const [formPlane, setPlane] = useState("")
   const [planes, setPlanes] = useState([]);
-  const [formAirline, setAirline] = useState(0)
+  const [formAirline, setAirline] = useState(-1)
   const [currentFlight, setCurrentFlight] = useState()
 
 
@@ -176,7 +176,7 @@ const AdmTableFlights = ({flights, updateFlights}) => {
               <div className="form-group">
                 <label htmlFor="selectorAirline">Самолёт</label>
                 <select value={formPlane} onChange={(v) => changeSelector(v)} className="form-control" id="selectorAirline">
-                  <option>-----</option>
+                  <option value={-1}>-----</option>
                   {resPlanes}
                 </select>
               </div>
@@ -219,7 +219,6 @@ const AdmTableFlights = ({flights, updateFlights}) => {
               <div className="form-group col-md-4">
                 <button onClick={(e) => {
                   e.preventDefault();
-                  console.log(formTimeArrival)
                   editFlight();
                 }} className="btn_form">Сохранить
                 </button>

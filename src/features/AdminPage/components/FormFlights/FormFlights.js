@@ -1,17 +1,15 @@
 import "./FormFlights.scss";
 import {useEffect, useState} from "react";
-import {useNavigate} from "react-router-dom";
 
-const FormFlights = ({updateFlights}) => {
+const FormFlights = ({updateFlights, planes}) => {
   const token = localStorage.getItem("authToken")
-  const navigate = useNavigate()
   const [isFormVisible, setFormVisible] = useState(false);
-  const [planes, setPlanes] = useState([]);
+  const [clientError, setClientErr] = useState("")
 
   const [formTimeDepart, setTimeDepart] = useState("")
   const [formDateArrival, setDateArrival] = useState("")
   const [formNFlight, setNFlight] = useState("")
-  const [formAirline, setAirline] = useState(0)
+  const [formAirline, setAirline] = useState(-1)
   const [formAirDepart, setAirDepart] = useState("")
   const [formAirDest, setAirDest] = useState("")
   const [formDateDepart, setDateDepart] = useState("")
@@ -19,20 +17,18 @@ const FormFlights = ({updateFlights}) => {
   const [formPlane, setPlane] = useState("")
 
 
-  useEffect(() => {
-    fetch("http://localhost:3000/planes", {
-      method: "GET",
-      headers: {
-        'Authorization': `Bearer ${token}`
-      }
-    })
-      .then(res => res.json())
-      .then((result) => {
-        setPlanes(result);
-      }, (errServer) => {
-        console.log(errServer);
-      })
-  }, []) // Planes
+
+  function clearFields() {
+    setTimeDepart("")
+    setDateArrival("")
+    setNFlight("")
+    setAirline(0)
+    setAirDepart("")
+    setAirDest("")
+    setDateDepart("")
+    setTimeArrival("")
+    setPlane("")
+  }
 
   const saveData = async () => {
     const token = localStorage.getItem("authToken")
@@ -56,7 +52,10 @@ const FormFlights = ({updateFlights}) => {
     })
       .then(res => res.json())
       .then(result => {
-          console.log(result)
+          if (result.msg) return setClientErr(result.msg);
+          setClientErr("");
+          setFormVisible(false);
+          clearFields();
           updateFlights()
         }, (errServer) => {
           console.log(errServer);
@@ -87,7 +86,12 @@ const FormFlights = ({updateFlights}) => {
         (<form>
           <div className="topLineForm">
             <p><b>Добавление рейса</b></p>
-            <button onClick={() => setFormVisible(false)} className="closeButton">X</button>
+            <button onClick={() => {
+              setFormVisible(false);
+              setClientErr("");
+              clearFields();
+            }} className="closeButton">X
+            </button>
           </div>
           <div className="form-group">
             <label htmlFor="inputNumFlight">Номер рейса</label>
@@ -97,7 +101,7 @@ const FormFlights = ({updateFlights}) => {
           <div className="form-group">
             <label htmlFor="selectorAirline">Самолёт</label>
             <select value={formPlane} onChange={(v) => changeSelector(v)} className="form-control" id="selectorAirline">
-              <option>-----</option>
+              <option value={-1}>-----</option>
               {resPlanes}
             </select>
           </div>
@@ -137,12 +141,15 @@ const FormFlights = ({updateFlights}) => {
                      className="form-control" id="inputTimeArrival"/>
             </div>
           </div>
-          <div className="form-group col-md-4">
-            <button onClick={(e) => {
-              e.preventDefault();
-              saveData()
-            }} className="btn_form">Сохранить
-            </button>
+          <div className="form-row">
+            <div className="form-group col-md-4">
+              <button onClick={(e) => {
+                e.preventDefault();
+                saveData()
+              }} className="btn_form">Сохранить
+              </button>
+            </div>
+            {(clientError) && <p className="form-group col-md-6 textError">{clientError}</p>}
           </div>
         </form>)
       }
