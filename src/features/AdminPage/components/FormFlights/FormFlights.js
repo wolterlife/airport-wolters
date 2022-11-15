@@ -2,7 +2,6 @@ import "./FormFlights.scss";
 import {useEffect, useState} from "react";
 
 const FormFlights = ({updateFlights, planes}) => {
-  const token = localStorage.getItem("authToken")
   const [isFormVisible, setFormVisible] = useState(false);
   const [clientError, setClientErr] = useState("")
 

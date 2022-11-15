@@ -4,6 +4,8 @@ import AdmTableFlights from "./components/AdmTableFlights/AdmTableFlights";
 import {useEffect, useState} from "react";
 import FormPlanes from "./components/FormPlanes/FormPlanes";
 import AdmTablePlanes from "./components/AdmTablePlanes/AdmTablePlanes";
+import AdmTableAirlines from "./components/AdmTableAirlines/AdmTableAirlines";
+import FormAirlines from "./components/FormAirlines/FormAirlines";
 
 const AdminPage = () => {
   const token = localStorage.getItem("authToken")
@@ -78,7 +80,7 @@ const AdminPage = () => {
   }
 
   const getAirlines = async () => {
-    fetch("http://localhost:3000/planes",{
+    fetch("http://localhost:3000/airlines",{
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
         'Authorization': `Bearer ${token}`
@@ -86,12 +88,11 @@ const AdminPage = () => {
     })
       .then(res => res.json())
       .then((result) => {
-        setPlanes(result);
+        setAirlines(result);
       }, (error) => {
         console.log(error)
       })
   }
-
 
   return (
     <>
@@ -100,6 +101,8 @@ const AdminPage = () => {
       <FormFlights planes={planes} updateFlights={getFlights} />
       <AdmTablePlanes airlines={airlines} planes={planes} updatePlanes={getPlanes} />
       <FormPlanes airlines={airlines} updatePlanes={getPlanes} />
+      <AdmTableAirlines airlines={airlines} updateAirlines={getAirlines} />
+      <FormAirlines airlines={airlines} updateAirlines={getAirlines} />
     </>
   )
 }

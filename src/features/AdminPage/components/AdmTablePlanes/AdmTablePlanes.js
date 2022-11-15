@@ -89,7 +89,7 @@ const AdmTablePlanes = ({planes, updatePlanes, airlines}) => {
       <tr key={item.id}>
         <td>{item.id}</td>
         <td>{item.model}</td>
-        <td>{item.airline.nameOfAirline}</td>
+        <td>{item.airline?.nameOfAirline}</td>
         <td>{item.year}</td>
         <td>{item.totalPlaces}</td>
         <td>
@@ -127,7 +127,7 @@ const AdmTablePlanes = ({planes, updatePlanes, airlines}) => {
           <div className="content">
             <form>
               <div className="topLineForm">
-                <p><b>Добавление самолёта</b></p>
+                <p><b>Редактирование самолёта {currentPlane.id}</b></p>
                 <button onClick={() => {
                   setPopUpVisible(false);
                   setClientErr("");

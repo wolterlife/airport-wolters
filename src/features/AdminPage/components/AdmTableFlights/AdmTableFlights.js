@@ -58,7 +58,7 @@ const AdmTableFlights = ({flights, updateFlights}) => {
   const changeSelector = v => {
     const selectInfo = v.target.value;
     setPlane(selectInfo);
-    setAirline(planes.find(item => item.id === +selectInfo).airline.id)
+    setAirline(planes.find(item => item.id === +selectInfo)?.airline?.id)
   }
 
   function preEditFlight(item) {
