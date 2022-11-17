@@ -125,6 +125,7 @@ const AdmTableFlights = ({flights, updateFlights}) => {
         <td>{item.airDest}</td>
         <td>{formatDateArrival}</td>
         <td>{item.timeDest}</td>
+        <td>{item.freePlaces}</td>
         <td>#{item.plane.id} {item.plane.model}</td>
         <td>
           <button onClick={() => preEditFlight(item)} className="btn_edit">Edit</button>
@@ -151,6 +152,7 @@ const AdmTableFlights = ({flights, updateFlights}) => {
           <th>Аэропорт прибытия</th>
           <th>Дата прибытия</th>
           <th>Время прибытия</th>
+          <th>Свободных мест</th>
           <th>Самолёт</th>
           <th></th>
           <th></th>

@@ -14,15 +14,14 @@ $nav-tabs-border-radius: 30px;
 $input-focus-border-color:              tint-color(#01A08A, 50%);
 $input-btn-focus-color:         rgba(1,160,138 , .25);
 $input-focus-box-shadow:                0 0 $input-btn-focus-blur $input-btn-focus-width $input-btn-focus-color;
-//BTSTRP BUTTON
 
+//BTSTRP BUTTON
 $theme-colors: (primary: rgba(255, 255, 255, 0.32));
 $btn-padding-y: 8px;
 $btn-padding-x: 47px;
 $btn-border-width: 0;
 $btn-border-radius: 30px;
 $btn-transition: color .1s ease-in-out, background-color .1s ease-in-out, border-color .1s ease-in-out, box-shadow .1s ease-in-out;
-
 
 header {
   background-color: #01A08A;
