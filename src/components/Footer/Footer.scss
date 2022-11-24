@@ -1,0 +1,49 @@
+footer {
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #01A08A;
+  padding: 18px 200px;
+  color: rgba(255, 255, 255, 0.93);
+
+  p {
+    margin: 0;
+  }
+}
+
+.leftBlock {
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  .lineContact {
+    display: flex;
+    align-items: center;
+
+    .textPhone {
+      margin-left: 24px;
+    }
+
+    .textMail {
+      margin-left: 16px;
+    }
+  }
+}
+
+.footer_logo {
+  margin-left: -48px;
+}
+
+.rightBlock {
+  .linkButton {
+    background-color: transparent;
+    border: 0;
+  }
+}
+
+.linkImg {
+  mix-blend-mode: soft-light;
+}
+
+

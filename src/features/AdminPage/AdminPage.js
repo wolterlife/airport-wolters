@@ -8,6 +8,7 @@ import AdmTableAirlines from "./components/AdmTableAirlines/AdmTableAirlines";
 import FormAirlines from "./components/FormAirlines/FormAirlines";
 import AdmTableTickets from "./components/AdmTableTickets/AdmTableTickets";
 import FormTickets from "./components/FormTickets/FormTickets";
+import AdmTableUsers from "./components/AdmTableUsers/AdmTableUsers";
 
 const AdminPage = () => {
   const token = localStorage.getItem("authToken")
@@ -15,6 +16,7 @@ const AdminPage = () => {
   const [planes, setPlanes] = useState([]);
   const [airlines, setAirlines] = useState([]);
   const [tickets, setTickets] = useState([]);
+  const [users, setUsers] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:3000/flights")
@@ -71,6 +73,21 @@ const AdminPage = () => {
       })
   },[]) // Tickets
 
+  useEffect(() => {
+    fetch("http://localhost:3000/users", {
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+        'Authorization': `Bearer ${token}`
+      },
+    })
+      .then(res => res.json())
+      .then((result) => {
+        setUsers(result);
+      }, (error) => {
+        console.log(error)
+      })
+  },[]) // Users
+
   const getFlights = async () => {
     fetch("http://localhost:3000/flights")
       .then(res => res.json())
@@ -126,6 +143,21 @@ const AdminPage = () => {
       })
   }
 
+  const getUsers = async () => {
+    fetch("http://localhost:3000/users",{
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+        'Authorization': `Bearer ${token}`
+      },
+    })
+      .then(res => res.json())
+      .then((result) => {
+        setUsers(result);
+      }, (error) => {
+        console.log(error)
+      })
+  }
+
   return (
     <>
       <Header />
@@ -137,6 +169,7 @@ const AdminPage = () => {
       <FormAirlines airlines={airlines} updateAirlines={getAirlines} />
       <AdmTableTickets tickets={tickets} flights={flights} updateTickets={getTickets} />
       <FormTickets flights={flights} updateTickets={getTickets}/>
+      <AdmTableUsers users={users} updateUsers={getUsers} />
     </>
   )
 }

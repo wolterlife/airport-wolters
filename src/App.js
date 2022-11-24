@@ -20,6 +20,5 @@ function App() {
     </Routes>
   );
 }
-// TODO: Сделать проверку на clearFields при post, closeForm
 
 export default App;

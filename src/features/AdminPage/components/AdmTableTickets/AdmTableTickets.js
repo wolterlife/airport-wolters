@@ -57,7 +57,7 @@ const AdmTableTickets = ({flights, tickets, updateTickets}) => {
       .then(res => res.json())
       .then(result => {
           console.log(result)
-          if (result.msg) return setClientErr(result.msg)
+          if (result?.msg) return setClientErr(result.msg)
           setPopUpVisible(false)
           updateTickets()
         }, (errServer) => {
