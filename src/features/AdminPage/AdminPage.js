@@ -9,6 +9,7 @@ import FormAirlines from "./components/FormAirlines/FormAirlines";
 import AdmTableTickets from "./components/AdmTableTickets/AdmTableTickets";
 import FormTickets from "./components/FormTickets/FormTickets";
 import AdmTableUsers from "./components/AdmTableUsers/AdmTableUsers";
+import Footer from "../../components/Footer/Footer";
 
 const AdminPage = () => {
   const token = localStorage.getItem("authToken")
@@ -170,6 +171,7 @@ const AdminPage = () => {
       <AdmTableTickets tickets={tickets} flights={flights} updateTickets={getTickets} />
       <FormTickets flights={flights} updateTickets={getTickets}/>
       <AdmTableUsers users={users} updateUsers={getUsers} />
+      <Footer />
     </>
   )
 }

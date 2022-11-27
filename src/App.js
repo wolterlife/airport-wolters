@@ -6,6 +6,7 @@ import InfoArrivPage from "./features/infoArivPage/InfoArrivPage";
 import WayPage from "./features/WayPage/WayPage";
 import MapPage from "./features/MapPage/MapPage";
 import AdminPage from "./features/AdminPage/AdminPage";
+import LoginPage from "./features/LoginPage/LoginPage";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Route path="/wolters-airport/info-arrival" element={<InfoArrivPage />} />
       <Route path="/wolters-airport/way-to-airport" element={<WayPage />} />
       <Route path="/wolters-airport/map" element={<MapPage />} />
+      <Route path="/wolters-airport/login" element={<LoginPage />} />
       <Route path="/wolters-airport/admin" element={<AdminPage />} />
     </Routes>
   );

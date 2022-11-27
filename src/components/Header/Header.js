@@ -32,7 +32,7 @@ const Header = () => {
     <header>
       <img onClick={() => navigate("/wolters-airport/")} src="/img/logo.svg" alt="logo"/>
       <div className="topRightContainer">
-          <button type="button" className="btn btn-primary"><em>Авторизация</em></button>
+          <button onClick={() => navigate("/wolters-airport/login")} type="button" className="btn btn-primary"><em>Авторизация</em></button>
         <button className="btnLanguage">EN</button>
         <button className="btnLanguage">RU</button>
       </div>
