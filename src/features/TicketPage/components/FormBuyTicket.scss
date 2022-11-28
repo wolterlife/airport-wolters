@@ -142,4 +142,15 @@
     font-family: 'Inter', sans-serif;
     font-style: italic;
   }
+
+  .buttonPlus {
+    position: absolute;
+    border: 0;
+    left: 78%;
+    background-color: transparent;
+
+    .buttonNewTicket {
+      width: 150px;
+    }
+  }
 }
