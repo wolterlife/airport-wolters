@@ -153,4 +153,12 @@
       width: 150px;
     }
   }
+
+  .errorText {
+    font-family: 'Inter', sans-serif;
+    font-size: 28px;
+    position: absolute;
+    top: 10%;
+    color: red;
+  }
 }

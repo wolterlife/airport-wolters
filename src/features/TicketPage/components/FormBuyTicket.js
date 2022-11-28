@@ -10,6 +10,7 @@ const FormBuyTicket = () => {
   const [formFIO, setFormFIO] = useState("")
   const [formPass, setFormPass] = useState("")
   const [numPlace, setNumPlace] = useState("__X")
+  const [clientError, setClientErr] = useState("")
 
   const changeSelector = (v) => {
     const selectInfo = v.target.value;
@@ -42,8 +43,10 @@ const FormBuyTicket = () => {
           // clearFields();
           // updateTickets()
           console.log(result);
+          if (result.msg) return setClientErr(result.msg);
           setNumPlace(result.numPlace)
           setTicketBought(true);
+          setClientErr("")
         }, (errServer) => {
           console.log(errServer);
         }
@@ -123,7 +126,7 @@ const FormBuyTicket = () => {
           <img className="buttonNewTicket" src="/img/plus.png" alt="Новый билет"/>
         </button>
       }
-
+      {clientError && <p className="errorText">{clientError}</p>}
     </div>
   )
 }
