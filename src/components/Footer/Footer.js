@@ -15,9 +15,9 @@ const Footer = () => {
       </div>
       <img className="footer_logo" src="/img/footer_logo.svg" alt="logo"/>
       <div className="rightBlock">
-        <button className="linkButton"><img src="/img/vk.svg" alt="vk" className="linkImg"/></button>
-        <button className="linkButton"><img className="linkImg" src="/img/inst.svg" alt="inst" /></button>
-          <button className="linkButton"><img className="linkImg" src="/img/tg.svg" alt="telegram" /></button>
+        <a href="https://taplink.cc/wolter.life"><button className="linkButton"><img src="/img/vk.svg" alt="vk" className="linkImg"/></button></a>
+        <a href="https://taplink.cc/wolter.life"><button className="linkButton"><img className="linkImg" src="/img/inst.svg" alt="inst"/></button></a>
+          <a href="https://taplink.cc/wolter.life"><button className="linkButton"><img className="linkImg" src="/img/tg.svg" alt="telegram"/></button></a>
       </div>
     </footer>
   )

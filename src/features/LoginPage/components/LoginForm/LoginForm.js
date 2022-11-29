@@ -24,6 +24,7 @@ const LoginForm = () => {
       .then(result => {
         if (result.msg) return setClientError(result.msg)
         localStorage.setItem("authToken", result.token);
+        localStorage.setItem("login", result.user.login);
         navigate("/wolters-airport/");
       })
   }

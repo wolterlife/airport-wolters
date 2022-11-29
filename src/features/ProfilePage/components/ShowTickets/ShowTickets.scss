@@ -1,0 +1,158 @@
+.formShowTicket {
+  position: relative;
+  background: url("https://i.imgur.com/OTP1wqH.png") center no-repeat;
+  background-size: 50%;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+
+
+
+  .inputContainer {
+    position: absolute;
+    background: #FAF6A3;
+    border-radius: 0 57px 57px 57px;
+    width: 20%;
+
+    .inputText {
+      font-size: 14px;
+      margin: 0 0 0 4px;
+      color: #6A2B91;
+      font-family: 'Inter', sans-serif;
+      font-style: italic;
+      line-height: 24px;
+    }
+
+    .inputField {
+      font-size: 18px;
+      margin-bottom: 4px;
+      width: 90%;
+      border: 0;
+      outline: 0;
+      margin-left: 24px;
+      background-color: transparent;
+    }
+
+    .selectorFlights {
+      -webkit-appearance: none;
+      width: 80%;
+    }
+
+    .selectorFlights:after {
+      content: "\25BE";
+      float: right;
+      margin-top: -3px;
+    }
+
+    .placeNumber {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 4px;
+      margin-left: 12px;
+      background-color: transparent;
+    }
+  }
+
+  .smallContainer {
+    width: 10%;
+  }
+
+  .topLeft {
+    top: 17%;
+    left: 28%;
+  }
+
+  .topRight {
+    top: 17%;
+    left: 50%;
+  }
+
+  .centerLeft {
+    top: 36%;
+    left: 28%;
+  }
+
+  .centerRight {
+    top: 36%;
+    left: 50%;
+  }
+
+  .bottomLeft {
+    width: 13%;
+    top: 78%;
+    left: 28%;
+  }
+
+  .bottomCenter {
+    width: 13%;
+    top: 78%;
+    left: 43%;
+  }
+
+  .bottomRight {
+    width: 13%;
+    top: 78%;
+    left: 59%;
+  }
+
+  .buttonBuy {
+    font-family: 'Inter', sans-serif;
+    font-style: italic;
+    font-size: 24px;
+    box-shadow: 6px 8px 0 rgba(0, 0, 0, 0.25);
+    border: 0;
+
+    .textBuy {
+      color: #6A2B91;
+      padding-top: 12px;
+      margin-bottom: 18px;
+    }
+  }
+
+  .buttonBuyGreen {
+    background-color: #a077f3;
+    width: 20%;
+    padding-inline: 8px;
+    top: 43%;
+
+    &:hover {
+      background-color: #a077f3;
+    }
+
+    .textBuy {
+      color: white;
+    }
+  }
+
+  .textUnderline {
+    border-top: 2px dashed #7B3BA2;
+    width: 44%;
+    position: absolute;
+    color: #6A2B91;
+    top: 63%;
+    left: 28%;
+    font-family: 'Inter', sans-serif;
+    font-style: italic;
+  }
+
+  .buttonPlus {
+    position: absolute;
+    border: 0;
+    left: 78%;
+    background-color: transparent;
+
+    .buttonNewTicket {
+      width: 150px;
+    }
+  }
+
+  .errorText {
+    font-family: 'Inter', sans-serif;
+    font-size: 28px;
+    position: absolute;
+    top: 10%;
+    color: red;
+  }
+}

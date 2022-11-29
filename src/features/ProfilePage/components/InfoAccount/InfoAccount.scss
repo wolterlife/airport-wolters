@@ -1,0 +1,30 @@
+.infoContainer {
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 48px;
+
+  .formContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #8C4AB3;
+    border-radius: 32px;
+    padding: 18px 24px;
+
+    .loginText {
+      color: white;
+      margin: 0;
+    }
+
+    .buttonExit {
+      padding: 8px 38px;
+      margin-top: 12px;
+      color: white;
+      border-color: #861b1b;
+      background-color: #9f1a1a;
+      border-radius: 8px;
+    }
+  }
+}
